@@ -1,8 +1,8 @@
 ## installation 
 ``` apt upgrade && apt update
 apt install git vlc python
-git clone https://github.com/Gofaone315/Hack_simulation
-cd Hack_simulation
+git clone https://github.com/Gofaone315/hack_simulation
+cd hack_simulation
 chmod +x main.py
 python main.py
 ```
