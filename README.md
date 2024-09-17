@@ -7,7 +7,7 @@ chmod +x main.py
 python main.py
 ```
 
-## Use
+## Usage
 
 
 Enter target name to hack.
