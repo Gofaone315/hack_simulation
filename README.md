@@ -1,6 +1,6 @@
 ## installation 
 ``` apt upgrade && apt update
-apt install git vlc python
+apt install git python
 git clone https://github.com/Gofaone315/hack_simulation
 cd hack_simulation
 chmod +x main.py
@@ -11,8 +11,10 @@ python main.py
 
 
 Enter target name to hack.
-This is just for fun and no hacking is involved.
+This is just for educational purposes, and entertainment and no hacking is involved.
 Hacking is illegal and can land you in serious trouble.
+
+feel free to contribute.
 
 ## Credits
 
