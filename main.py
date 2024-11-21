@@ -24,36 +24,6 @@ fake_file_system = {
 
 stages = ["Scanning ports", "Cracking passwords", "Exploiting vulnerabilities", "Bypassing firewalls", "Extracting data"]
 
-music = ["@Gofaone315_-_Hackers_mood.mp3", "@Gofaone315_-_Coding_101.mp3"]
-
-def ask_music():
-    question = input("\033[34m" + "do you want music? (y/n) " + "\033[0m").lower()
-    if question == "y":
-        select = input(f"\033[34m select music.\n1. {music[0]}\n2. {music[1]}\n...: \033[0m")
-        if select == "1":
-            file_path = music[0]
-        elif select == "2":
-            file_path = music[1]
-        else:
-            update_error("please enter correct number!")
-            ask_music()
-        try:
-            play_music(file_path)
-        except UnboundLocalError:
-            return
-    elif question == "n":
-        print("\033[34m" + "continuing without music..." + "\033[0m")
-    else:
-        update_error("please enter y or n!")
-        ask_music()
-
-def play_music(file_path):
-    command = f"vlc {file_path}"
-    subprocess.Popen(command, shell=True)
-
-def stop_music():
-    subprocess.call(["pkill", "vlc"])
-
 def update_callback(text):
     word = ""
     for letter in text:
@@ -66,7 +36,6 @@ def update_error(text):
 
 def do_hacking(target):
     progress = 0
-    ask_music()
     time.sleep(1.0)
     command = "clear"
     subprocess.Popen(command, shell=True)
@@ -88,9 +57,7 @@ def do_hacking(target):
     update_callback(f"Hacking {target} complete\n")
     for file in fake_file_system:
         update_callback(f"Accessing {target}://{file}")
-    else:
-        update_error(f"{target} confidential files not found in the file system.\n")
-        stop_music()
+    update_callback(f"Done hacking {target} files saved in /victims/{target}")
 
 def type_anim(text):
     sys.stdout.write("\r" + text)
